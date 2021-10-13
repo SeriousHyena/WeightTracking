@@ -36,20 +36,18 @@ int main()
 		cin >> nameInput;
 		nameVector.push_back(nameInput);		//store the keyboard input into the array
 		cout << endl;
-		cin.get();
-
 		
 		cout << "Enter the person's weight: ";
 		cin >> weightInput;
 		weightVector.push_back(weightInput);	//store the keyboard input into the array
 		cout << endl;
-		cin.get();
 	}
 
 	//print out the contents of both vectors
 	for (int i = 0; i < weightVector.size(); i++)
 	{
-		cout << (i) <<"."<<" " << nameVector.at(i) << " weighs: " << weightVector.at(i) << " pounds." << endl;
+		//showing 2 ways of accessing the array element using the .at method and indexing method[i]
+		cout << (i) <<"."<<" " << nameVector[i] << " weighs: " << weightVector.at(i) << " pounds." << endl; 
 	}
 
 	cout <<endl <<"Vector size is: " << weightVector.size();
