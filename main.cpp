@@ -20,40 +20,39 @@
 using namespace std;
 
 //create the vectors
-vector<int> intVector;				//store the person's weight
-vector<string> stringVector;		//store the person's name
+vector<int> weightVector;				//store the person's weight
+vector<string> nameVector;		//store the person's name
 string nameInput;
 int weightInput;
 int counter = 0;					//initialize a counter for the number of entries (5 max)
 
 int main()
 {
-	//priming read
-	cout << "Enter the Person's name: ";
-	cin >> nameInput;
-	//priming read
-	cout << "Enter the person's weight: ";
-	cin >> weightInput;
-
-	while (counter <3)
+	//iterate through the number of entries (5) we want in the vector array
+	while (counter <=4)
 	{
-		stringVector.push_back(nameInput);
+		counter++;
 		cout << "Enter the Person's name: ";
 		cin >> nameInput;
-		//cin.get();
+		nameVector.push_back(nameInput);		//store the keyboard input into the array
 		cout << endl;
+		cin.get();
 
-		cout << "Enter the person's weight: ";
-		intVector.push_back(weightInput);
+		
 		cout << "Enter the person's weight: ";
 		cin >> weightInput;
-		//cin.get();
+		weightVector.push_back(weightInput);	//store the keyboard input into the array
 		cout << endl;
-
-		cout <<"Name: " << stringVector.operator[](counter) << endl;
-		cout <<"Weight " << intVector.operator[](counter) << endl;
-		counter++;
+		cin.get();
 	}
+
+	//print out the contents of both vectors
+	for (int i = 0; i < weightVector.size(); i++)
+	{
+		cout << (i) <<"."<<" " << nameVector.at(i) << " weighs: " << weightVector.at(i) << " pounds." << endl;
+	}
+
+	cout <<endl <<"Vector size is: " << weightVector.size();
 
 	return 0;
 }
