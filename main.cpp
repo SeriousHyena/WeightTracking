@@ -19,8 +19,41 @@
 
 using namespace std;
 
+//create the vectors
+vector<int> intVector;				//store the person's weight
+vector<string> stringVector;		//store the person's name
+string nameInput;
+int weightInput;
+int counter = 0;					//initialize a counter for the number of entries (5 max)
+
 int main()
 {
+	//priming read
+	cout << "Enter the Person's name: ";
+	cin >> nameInput;
+	//priming read
+	cout << "Enter the person's weight: ";
+	cin >> weightInput;
+
+	while (counter <3)
+	{
+		stringVector.push_back(nameInput);
+		cout << "Enter the Person's name: ";
+		cin >> nameInput;
+		//cin.get();
+		cout << endl;
+
+		cout << "Enter the person's weight: ";
+		intVector.push_back(weightInput);
+		cout << "Enter the person's weight: ";
+		cin >> weightInput;
+		//cin.get();
+		cout << endl;
+
+		cout <<"Name: " << stringVector.operator[](counter) << endl;
+		cout <<"Weight " << intVector.operator[](counter) << endl;
+		counter++;
+	}
 
 	return 0;
 }
